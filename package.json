@@ -1,0 +1,21 @@
+{
+  "name": "@geraintguan/ts-lib",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "coverage": "vitest --coverage",
+    "test": "vitest"
+  },
+  "volta": {
+    "node": "20.14.0",
+    "pnpm": "9.1.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@vitest/coverage-v8": "^1.6.0",
+    "typedoc": "^0.25.13",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
