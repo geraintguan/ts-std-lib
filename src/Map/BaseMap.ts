@@ -6,7 +6,7 @@ export interface BaseMap<TKey, TValue> extends Iterable<[TKey, TValue]> {
 
   /**
    * Delete an entry with the given key from this map. If the key does not exist
-   * in the map, this should throw a {@link MissingKeyError}.
+   * in the map, this will  throw a {@link MissingKeyError}.
    *
    * @throws {MissingKeyError} If the key does not exist in the map.
    *
@@ -35,7 +35,7 @@ export interface BaseMap<TKey, TValue> extends Iterable<[TKey, TValue]> {
   deserializeKey: (key: string) => TKey;
 
   /**
-   * Returns an {@link IterableIterator} that allows iterating over the each
+   * Returns an iterable iterator that allows iterating over the each
    * entry as a key-value pair.
    *
    * @returns Iterator over entries as a key-value pair.
@@ -45,7 +45,7 @@ export interface BaseMap<TKey, TValue> extends Iterable<[TKey, TValue]> {
   /**
    * Get a value from the map by it's key.
    *
-   * If the key does not exist in the map, this should throw a
+   * If the key does not exist in the map, this will throw a
    * {@link MissingKeyError}.
    *
    * @throws {MissingKeyError} If the key does not exist in the map.
@@ -85,7 +85,7 @@ export interface BaseMap<TKey, TValue> extends Iterable<[TKey, TValue]> {
   has(key: TKey): boolean;
 
   /**
-   * Returns an {@link IterableIterator} that allows iterating over the keys in
+   * Returns an iterable iterator that allows iterating over the keys in
    * this map. Keys are deserialized before being returned.
    *
    * @returns Iterator over keys in the map.
@@ -119,7 +119,7 @@ export interface BaseMap<TKey, TValue> extends Iterable<[TKey, TValue]> {
   set(key: TKey, value: TValue): void;
 
   /**
-   * Returns an {@link IterableIterator} that allows iterating over the values
+   * Returns an iterable iterator that allows iterating over the values
    * in the map.
    *
    * @returns Iterator over values in the map.

@@ -5,17 +5,22 @@
   "type": "module",
   "scripts": {
     "coverage": "vitest --coverage",
+    "docs": "typedoc",
     "test": "vitest"
   },
   "volta": {
     "node": "20.14.0",
     "pnpm": "9.1.4"
   },
+  "peerDependencies": {
+    "@types/node": ">=20"
+  },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.4",
-    "@vitest/coverage-v8": "^1.6.0",
-    "typedoc": "^0.25.13",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "@types/node": "22.7.4",
+    "@tsconfig/node20": "20.1.4",
+    "@vitest/coverage-v8": "2.1.1",
+    "typedoc": "0.26.7",
+    "typescript": "5.4.5",
+    "vitest": "2.1.1"
   }
 }
