@@ -1,13 +1,16 @@
-name: Pull Request
+name: Coverage
 
 on:
   pull_request:
-    branches:
-      - main
-
+    branches: [main]
+  push:
+    branches: [main]
+concurrency:
+  group: coverage
+  cancel-in-progress: false
 jobs:
-  coverage:
-    name: Upload test coverage to codecov.io
+  upload:
+    name: Upload Coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,10 +22,8 @@ jobs:
           version: 9
       - uses: actions/setup-node@v4
         with:
-          node-version: "20.14.0"
+          node-version: "22.11.0"
           cache: pnpm
       - run: pnpm install
       - run: pnpm run coverage
-      - uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+      - uses: coverallsapp/github-action@v2

@@ -1,0 +1,35 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  npm:
+    name: Publish new release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.11.0"
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+      - run: pnpx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
