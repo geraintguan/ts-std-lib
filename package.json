@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "19.5.0",
-    "@commitlint/config-conventional": "19.5.0",
+    "@commitlint/config-conventional": "19.6.0",
     "@eslint/js": "9.15.0",
     "@tsconfig/node20": "20.1.4",
     "@types/eslint__js": "8.42.3",
