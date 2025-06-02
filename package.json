@@ -42,7 +42,7 @@
     "@types/node": "22.13.9",
     "@vitest/coverage-v8": "2.1.5",
     "eslint": "9.15.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.1.5",
     "eslint-plugin-perfectionist": "4.1.2",
     "eslint-plugin-prettier": "5.2.1",
     "husky": "9.1.7",
