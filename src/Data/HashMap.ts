@@ -1,40 +1,5 @@
 import { identity } from "../identity.js";
 
-class HashMapMissingKeyError<TKey, TValue, TSerializedKey> extends Error {
-  public readonly key: TKey;
-  public readonly map: HashMap<TKey, TValue, TSerializedKey>;
-
-  constructor(map: HashMap<TKey, TValue, TSerializedKey>, key: TKey) {
-    super(
-      `Could not find key ${String(key)} (${typeof key}) in HashMap ${map.name}`,
-    );
-
-    this.map = map;
-    this.key = key;
-  }
-}
-
-/**
- * Options for creating a new map instance.
- */
-export interface HashMapOptions<TKey, THashedKey = TKey> {
-  /**
-   * Function called to hash a key before storing or using it to access a
-   * value in the map.
-   */
-  hash: (key: TKey) => THashedKey;
-
-  /**
-   * Optional human readable name for the map instance that is used
-   * for debugging purposes.
-   *
-   * @remarks
-   *
-   * Defaults to `"unknown"` if not set.
-   */
-  name?: string;
-}
-
 /**
  * Function called to filter the entries in a map.
  *
@@ -57,6 +22,41 @@ export type HashMapFilterFn<TKey, TValue, THashedKey> = (
   index: number,
   original: HashMap<TKey, TValue, THashedKey>,
 ) => boolean;
+
+/**
+ * Options for creating a new map instance.
+ */
+export interface HashMapOptions<TKey, THashedKey = TKey> {
+  /**
+   * Function called to hash a key before storing or using it to access a
+   * value in the map.
+   */
+  hash: (key: TKey) => THashedKey;
+
+  /**
+   * Optional human readable name for the map instance that is used
+   * for debugging purposes.
+   *
+   * @remarks
+   *
+   * Defaults to `"unknown"` if not set.
+   */
+  name?: string;
+}
+
+class HashMapMissingKeyError<TKey, TValue, TSerializedKey> extends Error {
+  public readonly key: TKey;
+  public readonly map: HashMap<TKey, TValue, TSerializedKey>;
+
+  constructor(map: HashMap<TKey, TValue, TSerializedKey>, key: TKey) {
+    super(
+      `Could not find key ${String(key)} (${typeof key}) in HashMap ${map.name}`,
+    );
+
+    this.map = map;
+    this.key = key;
+  }
+}
 
 /**
  * Implementation of a key-value map that allows you to customise the way keys

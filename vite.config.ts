@@ -23,7 +23,7 @@ export default defineConfig({
   plugins: [
     dts({
       exclude: ["**/*.test.ts"],
-      tsconfigPath: resolve(__dirname, "tsconfig.lib.json"),
+      tsconfigPath: resolve(__dirname, "tsconfig.build.json"),
     }),
   ],
   test: {
