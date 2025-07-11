@@ -1,9 +1,0 @@
-{
-  "extends": "@tsconfig/node20/tsconfig.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "noEmit": true
-  },
-  "include": ["commitlint.config.mjs", "eslint.config.mjs", "vite.config.ts"],
-  "exclude": ["node_modules"]
-}
