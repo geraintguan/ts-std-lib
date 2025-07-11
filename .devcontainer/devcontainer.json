@@ -13,6 +13,17 @@
     }
   },
 
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.vscode-github-actions",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  },
+
   "postStartCommand": "./.devcontainer/postStartCommand.bash"
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
