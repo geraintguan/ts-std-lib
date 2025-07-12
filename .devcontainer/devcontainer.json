@@ -19,7 +19,8 @@
         "github.vscode-github-actions",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "vitest.explorer"
       ]
     }
   },
