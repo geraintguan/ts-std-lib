@@ -6,7 +6,7 @@ Status](https://coveralls.io/repos/github/geraintguan/ts-std-lib/badge.svg?branc
 
 [API Reference](https://ts-std-lib.geraint.io)
 
-A practical and pragmatic standard library for TypeScript (and JavaScript).
+A practical and pragmatic universal standard library for TypeScript targeting Browser/Node.js runtimes.
 
 ## Installation
 

@@ -1,5 +1,6 @@
 {
   "name": "@geraintguan/ts-std-lib",
+  "description": "A practical and pragmatic universal standard library for TypeScript targeting Browser/Node.js runtimes.",
   "version": "0.0.0-development",
   "license": "MIT",
   "type": "module",
