@@ -25,10 +25,13 @@
     }
   },
 
-  "postStartCommand": "./.devcontainer/postStartCommand.bash"
+  "postStartCommand": "./.devcontainer/postStartCommand.bash",
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  "forwardPorts": [],
+
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  }
 
   // Configure tool-specific properties.
   // "customizations": {},
