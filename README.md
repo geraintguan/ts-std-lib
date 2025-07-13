@@ -1,4 +1,4 @@
-# @geraintguan/ts-std-lib
+# Typescript Standard Library
 
 [![Coverage
 Status](https://coveralls.io/repos/github/geraintguan/ts-std-lib/badge.svg?branch=main)](https://coveralls.io/github/geraintguan/ts-std-lib?branch=main)
