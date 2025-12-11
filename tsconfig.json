@@ -5,9 +5,14 @@
     "noEmit": true
   },
   "typedocOptions": {
-    "entryPoints": ["src/index.ts"],
+    "entryPoints": ["src/**/*.ts"],
     "out": "docs"
   },
-  "include": ["src", "commitlint.config.mjs", "eslint.config.mjs", "vite.config.ts"],
+  "include": [
+    "src",
+    "commitlint.config.mjs",
+    "eslint.config.mjs",
+    "vite.config.ts"
+  ],
   "exclude": ["node_modules"]
 }

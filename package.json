@@ -3,6 +3,9 @@
   "description": "A practical and pragmatic universal standard library for TypeScript targeting Browser/Node.js runtimes.",
   "version": "0.0.0-development",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/geraintguan/ts-std-lib"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -44,7 +47,7 @@
     "eslint-plugin-prettier": "5.5.1",
     "husky": "9.1.7",
     "semantic-release": "24.2.7",
-    "typedoc": "0.28.7",
+    "typedoc": "0.28.15",
     "typescript": "5.8.3",
     "typescript-eslint": "8.37.0",
     "vite": "7.0.4",
