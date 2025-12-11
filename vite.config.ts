@@ -1,4 +1,4 @@
-import { globSync } from "fs";
+import { globSync } from "node:fs";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import { defineConfig } from "vitest/config";
