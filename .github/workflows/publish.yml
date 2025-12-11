@@ -3,9 +3,11 @@ name: Publish
 on:
   push:
     branches: [main]
+
 concurrency:
   group: publish
   cancel-in-progress: false
+
 jobs:
   npm:
     name: Publish new release
@@ -32,4 +34,3 @@ jobs:
       - run: pnpx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
