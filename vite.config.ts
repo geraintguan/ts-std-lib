@@ -1,3 +1,4 @@
+import { globSync } from "fs";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import { defineConfig } from "vitest/config";
@@ -5,7 +6,9 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: globSync(resolve(__dirname, "src/**/*.ts"), {
+        exclude: ["src/**/*.test.ts"],
+      }),
       fileName: (format, fileName) => {
         const extension = format === "cjs" ? "js" : "mjs";
         return `${fileName}.${extension}`;

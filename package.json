@@ -4,12 +4,11 @@
   "version": "0.0.0-development",
   "license": "MIT",
   "type": "module",
-  "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.mjs"
       }
     }
   },
@@ -27,7 +26,7 @@
     "access": "public"
   },
   "volta": {
-    "node": "22.11.0"
+    "node": "24.12.0"
   },
   "peerDependencies": {
     "@types/node": ">=20"
