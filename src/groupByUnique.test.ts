@@ -108,4 +108,16 @@ describe("groupByUnique", () => {
       b: { group: "b", items: [4, 5, 6] },
     });
   });
+
+  it("should work with symbol keys", () => {
+    const sym1 = Symbol("key1");
+    const sym2 = Symbol("key2");
+    const items = [
+      { symbol: sym1, value: "first" },
+      { symbol: sym2, value: "second" },
+    ];
+    const result = groupByUnique(items, (item) => item.symbol);
+    expect(result[sym1]).toEqual({ symbol: sym1, value: "first" });
+    expect(result[sym2]).toEqual({ symbol: sym2, value: "second" });
+  });
 });
