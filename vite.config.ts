@@ -1,4 +1,3 @@
-import { globSync } from "node:fs";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import { defineConfig } from "vitest/config";
@@ -6,9 +5,10 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   build: {
     lib: {
-      entry: globSync(resolve(__dirname, "src/**/*.ts"), {
-        exclude: ["src/**/*.test.ts"],
-      }),
+      entry: {
+        groupByUnique: resolve(__dirname, "src/groupByUnique.ts"),
+        // Add other entry points as needed
+      },
       fileName: (format, fileName) => {
         const extension = format === "cjs" ? "js" : "mjs";
         return `${fileName}.${extension}`;
